@@ -2,7 +2,8 @@ import './App.css';
 import CharacterCard from './CharacterCard';
 import WordCard from './WordCard';
 
-const word = "Hello";
+const words =['cat', 'dog', 'ant', 'frog', 'snake', 'python', 'bird', 'lion', 'bee', 'tiger', 'fly', 'fish', 'hydra', 'duck', 'dolphin', 'horse', 'monkey'];
+var index=Math.floor(Math.random()*words.length);
 function App() {
   return (
     <div style={{
@@ -12,7 +13,7 @@ function App() {
       justifyContent: 'center',
       margin: 5,
   }}>
-    <WordCard value={word}/>
+    <WordCard value={words[index]}/>
     </div> 
   );
 }
