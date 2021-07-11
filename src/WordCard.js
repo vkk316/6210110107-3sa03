@@ -41,7 +41,7 @@ export default function WordCard(props) {
     if (!state.completed) {
         return (
             <div>
-                <div> {`Total Attemps: ${state.attempt}`} </div>
+                <div> {`Total Attemps: ${state.attempt}`} <span> <button className='button' onClick={resetGame}>REPLAY</button></span> </div>
                 {state.chars.map((c, i) => <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt={state.attempt} />)}
             </div>
         );
@@ -62,7 +62,7 @@ export default function WordCard(props) {
                     justifyContent: 'center',
                     margin: 10,
                 }}>
-                    <button className='button' onClick={resetGame}>REPLAY</button>
+                    <button className='buttonGreen' onClick={resetGame}>RESTART</button>
                 </div>
             </div>
         );
