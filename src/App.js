@@ -5,9 +5,9 @@ import WordCard from './WordCard';
 const word = "Hello";
 function App() {
   return (
-  <div> 
-    <WordCard value="hello"/>
-  </div> 
+    <div>
+    <WordCard value={word}/>
+    </div> 
   );
 }
 
