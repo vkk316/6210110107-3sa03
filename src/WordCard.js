@@ -17,7 +17,7 @@ const prepareStateFromWord = (given_word) => {
 export default function WordCard(props) {
 
     const [state, setState] = useState(prepareStateFromWord(props.value))
-    
+
     const activationHandler = (c) => {
         console.log(`${c} has been activated.`)
         let guess = state.guess + c
@@ -32,27 +32,38 @@ export default function WordCard(props) {
             }
         }
     }
-    
-    const resetGame =() =>{
+
+    const resetGame = () => {
         console.log('Reset game')
         setState(prepareStateFromWord(props.value))
     }
 
-    if(!state.completed){
+    if (!state.completed) {
         return (
             <div>
                 <div> {`Total Attemps: ${state.attempt}`} </div>
-                {state.chars.map((c, i) => <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt={state.attempt}/>)}
+                {state.chars.map((c, i) => <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt={state.attempt} />)}
             </div>
         );
-    }else{
-        return(
-            <div>
-                You WIN with {state.attempt} attempts CONGRATS
-                <div>
-                <button onClick={resetGame}>Reset</button>
+    } else {
+        return (
+            <div className='centered'>
+                <div style={{
+                    fontSize: 24,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: 5,
+                }}>CONGRATS</div>
+                You WIN with {state.attempt} attempts.
+                <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: 10,
+                }}>
+                    <button className='button' onClick={resetGame}>REPLAY</button>
                 </div>
-
             </div>
         );
     }
