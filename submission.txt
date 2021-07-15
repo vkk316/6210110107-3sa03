@@ -1,0 +1,6 @@
+นายณัฐนัย ยาพระจันทร์
+
+- เพิ่มปุ่มรีเซท โดยการ reset state เพื่่อเริ่มเกมใหม่อีกครั้ง
+- ปรัปแต่ง Sytle ของแอป 
+    -Margin ของ card.
+    -GameOver dialog at center.
